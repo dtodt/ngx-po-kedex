@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
@@ -20,8 +21,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
+    AppRoutingModule,
     NgxsModule.forRoot([], {
       developmentMode: !environment.production
     }),
@@ -34,7 +36,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       disabled: environment.production
     }),
     NgxsRouterPluginModule.forRoot(),
-    NgxsStoragePluginModule.forRoot()
+    NgxsStoragePluginModule.forRoot({
+      key: [
+        'app.favorites'
+      ]
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
