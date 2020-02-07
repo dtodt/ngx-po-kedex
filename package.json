@@ -2,10 +2,8 @@
   "name": "ngx-po-kedex",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
     "build": "ng build",
-    "hmr": "ng serve --configuration hmr",
+    "start": "ng serve --configuration hmr",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
