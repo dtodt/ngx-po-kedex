@@ -7,6 +7,11 @@ import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 
+/*
+ * Environment properties
+ */
+import { environment } from '@environments/environment';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -17,10 +22,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgxsModule.forRoot([]),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsModule.forRoot([], {
+      developmentMode: !environment.production
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      disabled: environment.production,
+      maxAge: 25
+    }),
     NgxsFormPluginModule.forRoot(),
-    NgxsLoggerPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot({
+      disabled: environment.production
+    }),
     NgxsRouterPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot()
   ],
