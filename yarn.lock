@@ -900,6 +900,48 @@
     rxjs "6.5.3"
     webpack-sources "1.4.3"
 
+"@ngxs/devtools-plugin@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.6.1.tgz#e3baea72df7d6c7d6875f1d6f2e602a845555304"
+  integrity sha512-4FbIJsvg/uKhARrInGoXHNjZTdTZ94rWF81Bo2pLEWk1+Ma88x3Xspva+Y4HDMXYCswPFIwh3r3AJRBhAxQ1OA==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/form-plugin@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/form-plugin/-/form-plugin-3.6.1.tgz#6c6ab51b590294639cb53c4fd54248ad2bc0846d"
+  integrity sha512-qq6cRgB+ZrQvWnQ0RK6NSeF6tY/5Zz/hr2A25VfZnE4PYk6P/D5T0/nZvcjkYh0hFZ4qTa5HXfcshoIyJlFejQ==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/logger-plugin@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/logger-plugin/-/logger-plugin-3.6.1.tgz#a1515bca9d08fe60949a69f06761866c669084e4"
+  integrity sha512-2qax2Wj83oO/Q0bEqZcfCkvL9y8F+ifHZASPiGx68xxq2pmdmyOM4VInYoudNpCB0Gqo9898JIy1ODo98sUf+g==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/router-plugin@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/router-plugin/-/router-plugin-3.6.1.tgz#e491d1b2afb451cc035a3f812c071f9c3578b3ed"
+  integrity sha512-0jXCBRHjGWHGxnPI+jBI4yPlmtIynSAeolyLPsUv1IwDpaAsY8L/pW1QYThxcFUC+adwq2lYdpNyESn6R9vhfA==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/storage-plugin@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/storage-plugin/-/storage-plugin-3.6.1.tgz#978f59d195c585c01bfb2c725236724eb39fcea9"
+  integrity sha512-uUWcb6bMkt0iRh5VqOEOSX5bnqfmxLgw/AV77za35BXWjUbhkpVaBZXbCe3349d6JXODxjfJlUp3qbBL2aYHlQ==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/store@^3.6.1":
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.6.1.tgz#3349fe91580cbb704bb5063fe8215db0868d5140"
+  integrity sha512-q8SsQ2/GwUz1bdQTm6KvuorRlUu2EbhqYznZAtOvaes81Ntd9RftUAfiiMu+NlrZ3bU3859kUIW3Po65sj/sNA==
+  dependencies:
+    tslib "^1.9.0"
+
 "@schematics/angular@9.0.1":
   version "9.0.1"
   resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-9.0.1.tgz#1b08c938da4dcee2472b4641f3cbc906d6eb88af"
