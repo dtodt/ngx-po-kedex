@@ -13,6 +13,8 @@ import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
  */
 import { environment } from '@environments/environment';
 
+import { AppState } from './state/app.state';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -24,7 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxsModule.forRoot([], {
+    NgxsModule.forRoot([AppState], {
       developmentMode: !environment.production
     }),
     NgxsReduxDevtoolsPluginModule.forRoot({
@@ -37,9 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     }),
     NgxsRouterPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot({
-      key: [
-        'app.favorites'
-      ]
+      key: ['app.favorites']
     })
   ],
   providers: [],
