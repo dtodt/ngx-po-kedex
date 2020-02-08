@@ -9,11 +9,11 @@ import { environment } from '@environments/environment';
   providedIn: 'root'
 })
 export class PokeApiService {
-
   constructor(private http: HttpClient) {}
 
-  getPokemonList(offset: number = 0, limit: number = 20): Observable<PokemonListResult> {
-    return this.http.get<any>(`${environment.pokeApiBaseUrl}pokemon?offset=${offset}&limit=${limit}`);
+  getPokemonList(offset: number, limit: number): Observable<PokemonListResult> {
+    return this.http.get<any>(
+      `${environment.pokeApiBaseUrl}pokemon?offset=${offset}&limit=${limit}`
+    );
   }
-
 }
