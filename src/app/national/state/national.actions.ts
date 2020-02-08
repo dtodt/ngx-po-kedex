@@ -1,11 +1,23 @@
-import { PokemonListResult } from '@app/models';
+import { PokemonListRequest, PokemonListResult } from '@app/models';
 
 export class GetPokemonList {
-  static readonly type = '[App] Get Pokemon List';
-  constructor(public offset: number = 0, public limit: number = 20) {}
+  static readonly type = '[National] Get Pokemon List';
+  constructor(public request?: PokemonListRequest) {}
 }
 
 export class GetPokemonListDone {
-  static readonly type = '[App] Get Pokemon List Done';
-  constructor(public details?: any, public result?: PokemonListResult) {}
+  static readonly type = '[National] Get Pokemon List Done';
+  constructor(
+    public details?: any,
+    public result?: PokemonListResult,
+    public reset?: boolean
+  ) {}
+}
+
+export class GetMorePokemon {
+  static readonly type = '[National] Get More Pokemon';
+}
+
+export class ResetPokemonList {
+  static readonly type = '[National] Reset Pokemon List';
 }

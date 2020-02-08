@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { PokemonListResult } from '@app/models';
+import { PokemonListRequest, PokemonListResult } from '@app/models';
 import { environment } from '@environments/environment';
 
 @Injectable({
@@ -11,9 +11,9 @@ import { environment } from '@environments/environment';
 export class PokeApiService {
   constructor(private http: HttpClient) {}
 
-  getPokemonList(offset: number, limit: number): Observable<PokemonListResult> {
+  getPokemonList(request: PokemonListRequest): Observable<PokemonListResult> {
     return this.http.get<any>(
-      `${environment.pokeApiBaseUrl}pokemon?offset=${offset}&limit=${limit}`
+      `${environment.pokeApiBaseUrl}pokemon?offset=${request.offset}&limit=${request.limit}`
     );
   }
 }

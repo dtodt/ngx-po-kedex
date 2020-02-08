@@ -1,1 +1,5 @@
-export { PokemonListModel, PokemonListResult } from './pokemon-list';
+export {
+  PokemonListModel,
+  PokemonListResult,
+  PokemonListRequest
+} from './pokemon-list';

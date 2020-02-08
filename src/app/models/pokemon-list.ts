@@ -1,4 +1,3 @@
-
 export interface PokemonListModel {
   nr: number;
   name: string;
@@ -11,4 +10,10 @@ export interface PokemonListResult {
   next: string;
   previous: string;
   results: PokemonListModel[];
+}
+
+export interface PokemonListRequest {
+  offset: number;
+  limit: number;
+  last?: boolean;
 }

@@ -1,0 +1,21 @@
+<div class="container" fxLayout="column" fxLayoutAlign="start stretch">
+  <app-pokemon-list [pokemons]="pokemons$ | async"></app-pokemon-list>
+  <footer fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxFlex="20"></div>
+    <div fxFlex fxLayoutAlign="center center">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="loadMore()"
+        [disabled]="!(hasMore$ | async)"
+      >
+        Load More
+      </button>
+    </div>
+    <div fxFlex="20" fxLayoutAlign="end center">
+      <button type="button" class="btn btn-light" (click)="reset()">
+        Top
+      </button>
+    </div>
+  </footer>
+</div>
