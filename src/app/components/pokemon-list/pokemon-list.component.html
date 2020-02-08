@@ -1,0 +1,10 @@
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+  <ng-container *ngFor="let pokemon of pokemons">
+    <app-pokemon-tile
+      fxFlex="0 1 25%"
+      fxFlex.lt-md="0 1 50%"
+      fxFlex.lt-sm="100%"
+      [pokemon]="pokemon"
+    ></app-pokemon-tile>
+  </ng-container>
+</div>
