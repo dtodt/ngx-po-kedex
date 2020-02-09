@@ -6,12 +6,12 @@ const routes: Routes = [
   {
     path: 'national',
     loadChildren: () =>
-      import('./national/national.module').then(m => m.NationalModule)
+      import('./views/national/national.module').then(m => m.NationalModule)
   },
   {
     path: '**',
     loadChildren: () =>
-      import('./not-found/not-found.module').then(m => m.NotFoundModule)
+      import('./views/not-found/not-found.module').then(m => m.NotFoundModule)
   }
 ];
 
