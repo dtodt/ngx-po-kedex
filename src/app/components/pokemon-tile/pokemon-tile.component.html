@@ -1,8 +1,22 @@
-<li class="card pokemon">
-  <img class="card-img-top" [src]="pokemon?.sprite" [alt]="pokemon?.name" />
-  <span class="card-body">
+<div class="card pokemon" matRipple [matRippleTrigger]="trigger">
+  <img
+    #trigger
+    class="card-img-top"
+    [src]="pokemon?.sprite"
+    [alt]="pokemon?.name"
+    (click)="cardClicked()"
+  />
+  <span class="card-body" fxLayout="row" fxLayoutAlign="space-between center">
     <h5 class="card-title">
       #{{ pokemon?.nr }} {{ pokemon?.name | titlecase }}
     </h5>
+    <button
+      mat-icon-button
+      [color]="favorite ? 'accent' : 'secondary'"
+      isIconButton="true"
+      (click)="starClicked()"
+    >
+      <mat-icon>{{ favorite ? "star" : "star_border" }}</mat-icon>
+    </button>
   </span>
-</li>
+</div>
