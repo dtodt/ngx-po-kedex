@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxsModule } from '@ngxs/store';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
 import { PokemonTileModule } from '@app/components/pokemon-tile/pokemon-tile.module';
@@ -21,6 +22,7 @@ describe('NationalComponent', () => {
         RouterTestingModule,
         NgxsModule.forRoot([NationalState]),
         FlexLayoutModule,
+        MatToolbarModule,
         PokemonListModule,
         PokemonTileModule
       ],
