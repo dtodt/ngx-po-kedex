@@ -1,4 +1,4 @@
-<div class="card pokemon" matRipple [matRippleTrigger]="trigger">
+<div class="card m-3" matRipple [matRippleTrigger]="trigger">
   <img
     #trigger
     class="card-img-top"
@@ -10,13 +10,9 @@
     <h5 class="card-title">
       #{{ pokemon?.nr }} {{ pokemon?.name | titlecase }}
     </h5>
-    <button
-      mat-icon-button
-      [color]="favorite ? 'accent' : 'secondary'"
-      isIconButton="true"
+    <app-pokemon-favorite-button
+      [favorite]="favorite"
       (click)="starClicked()"
-    >
-      <mat-icon>{{ favorite ? "star" : "star_border" }}</mat-icon>
-    </button>
+    ></app-pokemon-favorite-button>
   </span>
 </div>

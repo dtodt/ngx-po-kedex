@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { PokemonTileModule } from '@app/components/pokemon-tile/pokemon-tile.module';
+import { PokemonTileModule } from './components/pokemon-tile/pokemon-tile.module';
 
 import { PokemonListComponent } from './pokemon-list.component';
 

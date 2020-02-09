@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
+
+import { PokemonFavoriteButtonModule } from '@app/components/pokemon-favorite-button/pokemon-favorite-button.module';
 
 import { PokemonTileComponent } from './pokemon-tile.component';
 
@@ -12,10 +12,9 @@ import { PokemonTileComponent } from './pokemon-tile.component';
   exports: [PokemonTileComponent],
   imports: [
     CommonModule,
+    MatRippleModule,
     FlexLayoutModule,
-    MatButtonModule,
-    MatIconModule,
-    MatRippleModule
+    PokemonFavoriteButtonModule
   ]
 })
 export class PokemonTileModule {}
