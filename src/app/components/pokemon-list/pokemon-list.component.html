@@ -4,7 +4,10 @@
       fxFlex="0 1 25%"
       fxFlex.lt-md="0 1 50%"
       fxFlex.lt-sm="100%"
+      [favorite]="favorites ? !!favorites[pokemon.nr] : false"
       [pokemon]="pokemon"
+      (displayDetails)="cardClicked($event)"
+      (toggleFavorite)="starClicked($event)"
     ></app-pokemon-tile>
   </ng-container>
 </div>
