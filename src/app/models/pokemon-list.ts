@@ -1,8 +1,8 @@
 export interface PokemonListModel {
   nr: number;
   name: string;
-  url: string;
   sprite: string;
+  url?: string;
 }
 
 export interface PokemonListResult {
