@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { HeaderModule } from '@app/components/header/header.module';
+import { LoaderModule } from '@app/components/loader/loader.module';
 import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
 import { PokemonFavoriteButtonModule } from '@app/components/pokemon-favorite-button/pokemon-favorite-button.module';
 
@@ -18,6 +19,7 @@ import { NationalState } from './state/national.state';
   imports: [
     CommonModule,
     HeaderModule,
+    LoaderModule,
     FlexLayoutModule,
     PokemonListModule,
     NationalRoutingModule,

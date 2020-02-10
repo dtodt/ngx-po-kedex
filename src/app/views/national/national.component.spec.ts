@@ -6,6 +6,7 @@ import { NgxsModule } from '@ngxs/store';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HeaderModule } from '@app/components/header/header.module';
+import { LoaderModule } from '@app/components/loader/loader.module';
 import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
 import { PokemonFavoriteButtonModule } from '@app/components/pokemon-favorite-button/pokemon-favorite-button.module';
 
@@ -20,6 +21,7 @@ describe('NationalComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         HeaderModule,
+        LoaderModule,
         HttpClientModule,
         FlexLayoutModule,
         MatToolbarModule,

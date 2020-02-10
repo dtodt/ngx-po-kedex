@@ -1,29 +1,31 @@
 <app-header subTitle="National"></app-header>
-<div class="container">
-  <div fxLayout="column" fxLayoutAlign="start stretch">
-    <app-pokemon-list
-      [favorites]="favorites$ | async"
-      [pokemons]="pokemons$ | async"
-      (displayDetails)="cardClicked($event)"
-      (toggleFavorite)="starClicked($event)"
-    ></app-pokemon-list>
-    <footer fxLayout="row" fxLayoutAlign="space-between center">
-      <div fxFlex="20"></div>
-      <div fxFlex fxLayoutAlign="center center">
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="loadMore()"
-          [disabled]="!(hasMore$ | async)"
-        >
-          Load More
-        </button>
-      </div>
-      <div fxFlex="20" fxLayoutAlign="end center">
-        <button type="button" class="btn btn-light" (click)="reset()">
-          Top
-        </button>
-      </div>
-    </footer>
+<app-loader [isLoading]="loading$ | async">
+  <div class="container">
+    <div fxLayout="column" fxLayoutAlign="start stretch">
+      <app-pokemon-list
+        [favorites]="favorites$ | async"
+        [pokemons]="pokemons$ | async"
+        (displayDetails)="cardClicked($event)"
+        (toggleFavorite)="starClicked($event)"
+      ></app-pokemon-list>
+      <footer fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxFlex="20"></div>
+        <div fxFlex fxLayoutAlign="center center">
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="loadMore()"
+            [disabled]="!(hasMore$ | async)"
+          >
+            Load More
+          </button>
+        </div>
+        <div fxFlex="20" fxLayoutAlign="end center">
+          <button type="button" class="btn btn-light" (click)="reset()">
+            Top
+          </button>
+        </div>
+      </footer>
+    </div>
   </div>
-</div>
+</app-loader>
