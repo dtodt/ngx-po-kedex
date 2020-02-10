@@ -1,0 +1,14 @@
+<mat-toolbar color="accent" fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="flex-start center">
+    <button mat-icon-button color="warn" (click)="goBack()" *ngIf="isChildPage">
+      <mat-icon>arrow_back_ios</mat-icon>
+    </button>
+    <span>{{ getTitle() }}</span>
+  </div>
+  <app-pokemon-favorite-button
+    *ngIf="!isChildPage"
+    [disabled]="!favoriteCount()"
+    [favoriteCount]="favoriteCount()"
+    (click)="goFavorites()"
+  ></app-pokemon-favorite-button>
+</mat-toolbar>
