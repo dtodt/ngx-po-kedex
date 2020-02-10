@@ -3,7 +3,7 @@
   <div fxLayout="column" fxLayoutAlign="start stretch">
     <app-pokemon-list
       [favorites]="favorites$ | async"
-      [pokemons]="pokemons()"
+      [pokemons]="getPokemons()"
       (displayDetails)="cardClicked($event)"
       (toggleFavorite)="starClicked($event)"
     ></app-pokemon-list>
