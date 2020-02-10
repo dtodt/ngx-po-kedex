@@ -1,0 +1,7 @@
+<mat-chip-list aria-label="Pokemon types">
+  <ng-container *ngFor="let slot of typeList">
+    <mat-chip [class]="slot.type.name">{{
+      slot.type.name | titlecase
+    }}</mat-chip>
+  </ng-container>
+</mat-chip-list>
