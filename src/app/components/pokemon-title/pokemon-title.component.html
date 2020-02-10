@@ -1,0 +1,5 @@
+<span fxLayout="row" fxLayoutAlign="space-between end">
+  <h5 class="card-title">#{{ id }} {{ name | titlecase }}</h5>
+  <app-pokemon-favorite-button [favorite]="favorite" (click)="starClicked()">
+  </app-pokemon-favorite-button>
+</span>
