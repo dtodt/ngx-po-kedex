@@ -1,11 +1,13 @@
-import { NavigatePokemonDetails } from './../../state/app.actions';
 import { Component } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { PokemonListModel } from '@app/models';
 import { AppState, FavoritePokemonMap } from '@app/state/app.state';
-import { FavoritePokemonToggle } from '@app/state/app.actions';
+import {
+  FavoritePokemonToggle,
+  NavigatePokemonDetails
+} from '@app/state/app.actions';
 
 import { GetMorePokemon, ResetPokemonList } from './state/national.actions';
 import { NationalState } from './state/national.state';
