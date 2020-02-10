@@ -45,4 +45,12 @@ export class NationalComponent {
       this.store.dispatch(new FavoritePokemonToggle(found));
     }
   }
+
+  favoriteCount(): number {
+    const favorites = this.store.selectSnapshot(AppState.favorites);
+    if (favorites) {
+      return Object.keys(favorites).length;
+    }
+    return;
+  }
 }

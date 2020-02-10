@@ -9,6 +9,18 @@ const routes: Routes = [
       import('./views/national/national.module').then(m => m.NationalModule)
   },
   {
+    path: 'favorites',
+    loadChildren: () =>
+      import('./views/favorites/favorites.module').then(m => m.FavoritesModule)
+  },
+  {
+    path: 'pokemon-details/:id',
+    loadChildren: () =>
+      import('./views/pokemon-details/pokemon-details.module').then(
+        m => m.PokemonDetailsModule
+      )
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./views/not-found/not-found.module').then(m => m.NotFoundModule)

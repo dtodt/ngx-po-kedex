@@ -1,0 +1,40 @@
+<app-header subTitle="Details" isChildPage="true"></app-header>
+<div class="container" *ngIf="details$ | async as details; else loading">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+    <app-pokemon-portrait
+      class="m-2"
+      fxFlex="20"
+      [id]="id"
+      [back]="back"
+      [shiny]="shiny"
+      [name]="details?.name"
+      [types]="details?.types"
+      [favorite]="isFavorite()"
+    ></app-pokemon-portrait>
+    <div
+      class="card m-2"
+      fxFlex
+      fxLayout="row"
+      fxLayout.lt-sm="column"
+      fxLayoutAlign="flex-start"
+    >
+      <span class="card-body" fxLayout="column">
+        <app-pokemon-title
+          [id]="id"
+          [name]="details?.name"
+          [favorite]="isFavorite()"
+          (toggleFavorite)="starClicked()"
+        >
+        </app-pokemon-title>
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+          <!-- Not sure why but, the height and weight values from api are multiplied by 10 -->
+          <span class="m-1"><b>Height:</b> {{ details?.height / 10 }} m</span>
+          <span class="m-1"><b>Weight:</b> {{ details?.weight / 10 }} kg</span>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  Loading stuff...
+</ng-template>

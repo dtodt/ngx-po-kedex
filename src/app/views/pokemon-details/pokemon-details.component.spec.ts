@@ -3,37 +3,36 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxsModule } from '@ngxs/store';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HeaderModule } from '@app/components/header/header.module';
-import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
-import { PokemonFavoriteButtonModule } from '@app/components/pokemon-favorite-button/pokemon-favorite-button.module';
+import { PokemonPortraitModule } from '@app/components/pokemon-portrait/pokemon-portrait.module';
+import { PokemonTitleModule } from '@app/components/pokemon-title/pokemon-title.module';
 
-import { NationalState } from './state/national.state';
-import { NationalComponent } from './national.component';
+import { PokemonDetailsState } from './state/pokemon-details.state';
 
-describe('NationalComponent', () => {
-  let component: NationalComponent;
-  let fixture: ComponentFixture<NationalComponent>;
+import { PokemonDetailsComponent } from './pokemon-details.component';
+
+describe('PokemonDetailsComponent', () => {
+  let component: PokemonDetailsComponent;
+  let fixture: ComponentFixture<PokemonDetailsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      declarations: [PokemonDetailsComponent],
       imports: [
         HeaderModule,
         HttpClientModule,
         FlexLayoutModule,
-        MatToolbarModule,
-        PokemonListModule,
+        PokemonTitleModule,
         RouterTestingModule,
-        PokemonFavoriteButtonModule,
-        NgxsModule.forRoot([NationalState])
-      ],
-      declarations: [NationalComponent]
+        PokemonPortraitModule,
+        NgxsModule.forRoot([PokemonDetailsState])
+      ]
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NationalComponent);
+    fixture = TestBed.createComponent(PokemonDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

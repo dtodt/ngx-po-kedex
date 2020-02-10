@@ -19,6 +19,14 @@ export class NavigationFailed {
   static readonly type = '[App] Navigation Failed';
 }
 
+export class NavigateFavoritePokemons {
+  static readonly type = '[App] Navigate Favorite Pokemons';
+}
+
+export class NavigationHome {
+  static readonly type = '[App] Navigation Failed';
+}
+
 export class NavigatePokemonDetails {
   static readonly type = '[App] Navigate Pokemon Details';
   constructor(public id?: number) {}

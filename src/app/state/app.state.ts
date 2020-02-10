@@ -10,7 +10,9 @@ import {
   UnFavoritePokemon,
   FavoritePokemonToggle,
   NavigationFailed,
-  NavigatePokemonDetails
+  NavigatePokemonDetails,
+  NavigateFavoritePokemons,
+  NavigationHome
 } from './app.actions';
 
 export interface FavoritePokemonMap {
@@ -95,6 +97,24 @@ export class AppState {
    */
   @Action(NavigationFailed)
   navigationFailed(ctx: StateContext<AppStateModel>) {
-    return ctx.dispatch(new Navigate(['/not-found']));
+    return ctx.dispatch(
+      new Navigate(['/not-found'], null, { replaceUrl: true })
+    );
+  }
+
+  /**
+   * Go to favorites page.
+   */
+  @Action(NavigateFavoritePokemons)
+  navigateFavoritePokemons(ctx: StateContext<AppStateModel>) {
+    return ctx.dispatch(new Navigate(['/favorites']));
+  }
+
+  /**
+   * Go to home page.
+   */
+  @Action(NavigationHome)
+  navigationHome(ctx: StateContext<AppStateModel>) {
+    return ctx.dispatch(new Navigate(['/'], null, { replaceUrl: true }));
   }
 }
