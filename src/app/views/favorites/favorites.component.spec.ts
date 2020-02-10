@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgxsModule } from '@ngxs/store';
+
+import { HeaderModule } from '@app/components/header/header.module';
+import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
 
 import { FavoritesComponent } from './favorites.component';
 
@@ -14,10 +15,10 @@ describe('FavoritesComponent', () => {
     TestBed.configureTestingModule({
       declarations: [FavoritesComponent],
       imports: [
-        MatIconModule,
-        MatButtonModule,
-        MatToolbarModule,
-        FlexLayoutModule
+        HeaderModule,
+        FlexLayoutModule,
+        PokemonListModule,
+        NgxsModule.forRoot([])
       ]
     }).compileComponents();
   }));

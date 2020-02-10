@@ -1,1 +1,11 @@
-<p>favorites works!</p>
+<app-header subTitle="Details" isChildPage="true"></app-header>
+<div class="container">
+  <div fxLayout="column" fxLayoutAlign="start stretch">
+    <app-pokemon-list
+      [favorites]="favorites$ | async"
+      [pokemons]="pokemons()"
+      (displayDetails)="cardClicked($event)"
+      (toggleFavorite)="starClicked($event)"
+    ></app-pokemon-list>
+  </div>
+</div>

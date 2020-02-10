@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+
+import { HeaderModule } from '@app/components/header/header.module';
+import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
 
 import { FavoritesRoutingModule } from './favorites-routing.module';
 import { FavoritesComponent } from './favorites.component';
@@ -12,10 +12,9 @@ import { FavoritesComponent } from './favorites.component';
   declarations: [FavoritesComponent],
   imports: [
     CommonModule,
-    MatIconModule,
-    MatButtonModule,
-    MatToolbarModule,
+    HeaderModule,
     FlexLayoutModule,
+    PokemonListModule,
     FavoritesRoutingModule
   ]
 })
