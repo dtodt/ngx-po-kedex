@@ -1,7 +1,5 @@
-<button
-  mat-icon-button
-  [color]="favorite ? 'accent' : 'secondary'"
-  isIconButton="true"
->
-  <mat-icon>{{ favorite ? "star" : "star_border" }}</mat-icon>
+<button mat-icon-button [color]="getColor()" [disabled]="disabled">
+  <mat-icon [matBadge]="favoriteCount" matBadgeColor="warn">{{
+    getIcon()
+  }}</mat-icon>
 </button>
