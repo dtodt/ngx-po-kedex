@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~9.0.0",
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
+    "@hardpool/ngx-spinner": "^2.2.1",
     "@ngxs/form-plugin": "^3.6.1",
     "@ngxs/logger-plugin": "^3.6.1",
     "@ngxs/router-plugin": "^3.6.1",
@@ -29,7 +30,6 @@
     "bootstrap": "4.4.1",
     "immer": "^5.3.4",
     "ngx-bootstrap": "^5.3.2",
-    "ngx-spinner": "^8.1.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

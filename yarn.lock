@@ -907,6 +907,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@hardpool/ngx-spinner@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@hardpool/ngx-spinner/-/ngx-spinner-2.2.1.tgz#a043c575d43421feeae47b883290a59dc98682da"
+  integrity sha512-MSozcGpCq9w8AooaPE/Nu+5IF9Z5erzFCe6DSgyTkg43uVy527LRAk8NNmJ0q0GBPp4/rHALS3asM2sAm3VMOQ==
+
 "@istanbuljs/schema@^0.1.2":
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
@@ -5424,13 +5429,6 @@ ngx-bootstrap@^5.3.2:
   version "5.3.2"
   resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-5.3.2.tgz#0668b01202610657e998b3ca87669645e0b31dc9"
   integrity sha512-gSMf8EXYl99Q3gqkq4RVhoTNSTYHz2Or6Cig2BJRbLJyqk15ZQE5qcq/ldHS8zzx/wgCA3HQeI63t2j2mEU9PA==
-
-ngx-spinner@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/ngx-spinner/-/ngx-spinner-8.1.0.tgz#edb834669ff8ee92fb9f2d307ae654557c0e4429"
-  integrity sha512-VtIcKsxe+cNj9zCelNesSJZ/xarjxKL86GQG9h4JM++/Hf7HUJtPDBWXZ6lBk0CpgWdJ4++XX3aeOntI92ApEw==
-  dependencies:
-    tslib "^1.9.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
