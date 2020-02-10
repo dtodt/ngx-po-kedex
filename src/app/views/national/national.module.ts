@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { NgxsModule } from '@ngxs/store';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
-import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { HeaderModule } from '@app/components/header/header.module';
 import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
@@ -20,7 +19,6 @@ import { NationalState } from './state/national.state';
     CommonModule,
     HeaderModule,
     FlexLayoutModule,
-    MatToolbarModule,
     PokemonListModule,
     NationalRoutingModule,
     ButtonsModule.forRoot(),
