@@ -6,7 +6,6 @@ import { NgxsModule } from '@ngxs/store';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
-import { PokemonTileModule } from '@app/components/pokemon-tile/pokemon-tile.module';
 
 import { NationalState } from './state/national.state';
 import { NationalComponent } from './national.component';
@@ -23,8 +22,7 @@ describe('NationalComponent', () => {
         NgxsModule.forRoot([NationalState]),
         FlexLayoutModule,
         MatToolbarModule,
-        PokemonListModule,
-        PokemonTileModule
+        PokemonListModule
       ],
       declarations: [NationalComponent]
     }).compileComponents();

@@ -6,7 +6,6 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { PokemonListModule } from '@app/components/pokemon-list/pokemon-list.module';
-import { PokemonTileModule } from '@app/components/pokemon-tile/pokemon-tile.module';
 
 import { NationalRoutingModule } from './national-routing.module';
 import { NationalComponent } from './national.component';
@@ -22,8 +21,7 @@ import { NationalState } from './state/national.state';
     FlexLayoutModule,
     ButtonsModule.forRoot(),
     MatToolbarModule,
-    PokemonListModule,
-    PokemonTileModule
+    PokemonListModule
   ]
 })
 export class NationalModule {}

@@ -1,10 +1,11 @@
+import { NavigatePokemonDetails } from './../../state/app.actions';
 import { Component } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { PokemonListModel } from '@app/models';
 import { AppState, FavoritePokemonMap } from '@app/state/app.state';
-import { FavoritePokemon, UnFavoritePokemon } from '@app/state/app.actions';
+import { FavoritePokemonToggle } from '@app/state/app.actions';
 
 import { GetMorePokemon, ResetPokemonList } from './state/national.actions';
 import { NationalState } from './state/national.state';
@@ -32,17 +33,14 @@ export class NationalComponent {
   }
 
   cardClicked(id?: number): void {
-    console.log('Card clicked', id);
+    this.store.dispatch(new NavigatePokemonDetails(id));
   }
 
   starClicked(id?: number): void {
-    const favorites = this.store.selectSnapshot(AppState.favorites);
-    if (favorites[id]) {
-      this.store.dispatch(new UnFavoritePokemon(id));
-    } else {
-      const pokemons = this.store.selectSnapshot(NationalState.pokemons);
-      const favorite = pokemons.find(pokemon => pokemon.nr === id);
-      this.store.dispatch(new FavoritePokemon(favorite));
+    const pokemons = this.store.selectSnapshot(NationalState.pokemons);
+    const found = pokemons.find(pokemon => pokemon.nr === id);
+    if (found) {
+      this.store.dispatch(new FavoritePokemonToggle(found));
     }
   }
 }

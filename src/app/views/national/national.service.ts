@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { PokemonListModel, PokemonListRequest } from '@app/models';
-import { environment } from '@environments/environment';
+import { getPokemonId, getSpriteUrl } from '@app/util/pokemon-url';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,6 @@ export class NationalService {
    * Currently the last unique pokemon from the api.
    */
   private lastPokemon = 807;
-  private spriteExtension = '.png';
 
   constructor() {}
 
@@ -55,20 +54,10 @@ export class NationalService {
    * @param url pokemon details url.
    */
   private extractMissingInfo(url: string): object {
-    const nr = this.extractPokemonNumber(url);
+    const nr = getPokemonId(url);
     return {
       nr,
-      sprite: `${environment.pokeApiSpriteUrl}${nr}${this.spriteExtension}`
+      sprite: getSpriteUrl(nr)
     };
-  }
-
-  /**
-   * Extracts the number from pokemon url.
-   * @param url pokemon details url.
-   */
-  private extractPokemonNumber(url: string): number {
-    return Number(
-      url.replace(environment.pokeApiBaseUrl, '').replace(/\D*/gm, '')
-    );
   }
 }

@@ -103,10 +103,7 @@ export class NationalState implements NgxsOnInit {
    * Load more pokemon from api.
    */
   @Action(GetMorePokemon)
-  GetMorePokemon(
-    ctx: StateContext<NationalStateModel>,
-    action: GetMorePokemon
-  ) {
+  GetMorePokemon(ctx: StateContext<NationalStateModel>) {
     const request = this.nationalSvc.getNextPage(ctx.getState().lastPokemon);
     if (request) {
       ctx.setState(
@@ -114,7 +111,7 @@ export class NationalState implements NgxsOnInit {
           draft.hasMore = !request.last;
         })
       );
-      ctx.dispatch(new GetPokemonList(request));
+      return ctx.dispatch(new GetPokemonList(request));
     }
   }
 }
