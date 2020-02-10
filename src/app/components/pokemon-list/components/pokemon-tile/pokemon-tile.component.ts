@@ -28,8 +28,7 @@ export class PokemonTileComponent {
   cardClicked(): void {
     this.displayDetails.emit(this.pokemon.nr);
   }
-
-  starClicked(): void {
-    this.toggleFavorite.emit(this.pokemon.nr);
+  starClicked(id?: number): void {
+    this.toggleFavorite.emit(id);
   }
 }

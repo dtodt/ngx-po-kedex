@@ -6,13 +6,13 @@
     [alt]="pokemon?.name"
     (click)="cardClicked()"
   />
-  <span class="card-body" fxLayout="row" fxLayoutAlign="space-between end">
-    <h5 class="card-title">
-      #{{ pokemon?.nr }} {{ pokemon?.name | titlecase }}
-    </h5>
-    <app-pokemon-favorite-button
+  <span class="card-body" fxLayout="column">
+    <app-pokemon-title
+      [id]="pokemon?.nr"
+      [name]="pokemon?.name"
       [favorite]="favorite"
-      (click)="starClicked()"
-    ></app-pokemon-favorite-button>
+      (toggleFavorite)="starClicked($event)"
+    >
+    </app-pokemon-title>
   </span>
 </div>

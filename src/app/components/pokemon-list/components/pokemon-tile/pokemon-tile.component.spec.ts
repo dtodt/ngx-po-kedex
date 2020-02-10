@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
+
+import { PokemonTitleModule } from '@app/components/pokemon-title/pokemon-title.module';
 
 import { PokemonTileComponent } from './pokemon-tile.component';
 
@@ -13,12 +13,7 @@ describe('PokemonTileComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [PokemonTileComponent],
-      imports: [
-        FlexLayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatRippleModule
-      ]
+      imports: [FlexLayoutModule, MatRippleModule, PokemonTitleModule]
     }).compileComponents();
   }));
 
