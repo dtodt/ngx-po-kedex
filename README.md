@@ -1,3 +1,5 @@
+![CI](https://github.com/dtodt/ngx-po-kedex/workflows/CI/badge.svg)
+
 # Pokedex
 
 This is a frontend for the api [PokéAPI](https://pokeapi.co/docs/v2.html).
