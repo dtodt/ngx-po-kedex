@@ -26,15 +26,78 @@
           (toggleFavorite)="starClicked()"
         >
         </app-pokemon-title>
-        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+        <div fxLayout="row" fxLayoutAlign="flex-start">
           <!-- Not sure why but, the height and weight values from api are multiplied by 10 -->
-          <span class="m-1"><b>Height:</b> {{ details?.height / 10 }} m</span>
-          <span class="m-1"><b>Weight:</b> {{ details?.weight / 10 }} kg</span>
+          <span class="m-1"> <b>Height:</b> {{ details?.height / 10 }} m </span>
+          <span class="m-1">
+            <b>Weight:</b> {{ details?.weight / 10 }} kg
+          </span>
+        </div>
+        <div
+          fxFlex
+          fxLayout="row"
+          fxLayout.lt-sm="column"
+          fxLayoutAlign="flex-start"
+        >
+          <div fxLayout="column" fxLayoutAlign="start start" fxFlex="30">
+            <h6 class="mt-3 m-1"><b>Appearance:</b></h6>
+            <div
+              fxFlex
+              fxLayout="column"
+              fxLayout.lt-sm="row"
+              fxLayoutAlign="flex-start"
+            >
+              <button
+                type="button"
+                class="btn btn-success m-1"
+                [(ngModel)]="back"
+                btnCheckbox
+                [btnCheckboxTrue]="true"
+                [btnCheckboxFalse]="false"
+              >
+                Turn Backward
+              </button>
+              <button
+                type="button"
+                class="btn btn-warning m-1"
+                [(ngModel)]="shiny"
+                btnCheckbox
+                [btnCheckboxTrue]="true"
+                [btnCheckboxFalse]="false"
+              >
+                Make Shiny
+              </button>
+            </div>
+          </div>
+          <div
+            fxLayout="column"
+            fxLayoutAlign="start"
+            fxFlex
+            *ngIf="details?.stats"
+          >
+            <h6 class="mt-3 m-1"><b>Stats:</b></h6>
+            <div
+              class="mt-1"
+              gdGap="10px"
+              gdColumns="repeat(auto-fill, minmax(200px, 1fr))"
+            >
+              <ng-container *ngFor="let slot of details.stats">
+                <div
+                  class="box p-1 ml-1"
+                  fxLayout="row"
+                  fxLayoutAlign="space-between center"
+                >
+                  <span>
+                    <b>{{ slot.stat.name | titlecase }}:</b>
+                  </span>
+                  <span>{{ slot.base_stat }}</span>
+                </div>
+              </ng-container>
+            </div>
+          </div>
         </div>
       </span>
     </div>
   </div>
 </div>
-<ng-template #loading>
-  Loading stuff...
-</ng-template>
+<ng-template #loading></ng-template>

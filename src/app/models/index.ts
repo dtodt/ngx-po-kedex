@@ -6,6 +6,8 @@ export {
 
 export {
   PokemonDetailResult,
+  PokemonStatSlot,
+  PokemonStat,
   PokemonTypeSlot,
   PokemonType
 } from './pokemon-detail';

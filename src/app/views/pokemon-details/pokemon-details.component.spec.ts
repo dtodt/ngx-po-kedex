@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxsModule } from '@ngxs/store';
+import { FormsModule } from '@angular/forms';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { HeaderModule } from '@app/components/header/header.module';
 import { PokemonPortraitModule } from '@app/components/pokemon-portrait/pokemon-portrait.module';
@@ -20,7 +22,9 @@ describe('PokemonDetailsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [PokemonDetailsComponent],
       imports: [
+        FormsModule,
         HeaderModule,
+        ButtonsModule,
         HttpClientModule,
         FlexLayoutModule,
         PokemonTitleModule,

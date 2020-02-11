@@ -1,6 +1,14 @@
+export interface PokemonStat {
+  name: string;
+}
+
+export interface PokemonStatSlot {
+  base_stat: number;
+  stat: PokemonStat;
+}
+
 export interface PokemonType {
   name: string;
-  url: string;
 }
 
 export interface PokemonTypeSlot {
@@ -10,7 +18,8 @@ export interface PokemonTypeSlot {
 export interface PokemonDetailResult {
   id?: number;
   name?: string;
-  types?: PokemonTypeSlot[];
   height?: number;
   weight?: number;
+  stats?: PokemonStatSlot[];
+  types?: PokemonTypeSlot[];
 }
