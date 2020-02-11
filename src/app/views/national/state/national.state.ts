@@ -85,9 +85,6 @@ export class NationalState implements NgxsOnInit {
     ctx.setState(
       produce(ctx.getState(), draft => {
         if (action.result) {
-          if (action.reset) {
-            draft.pokemons = [];
-          }
           draft.pokemons = [
             ...draft.pokemons,
             ...this.nationalSvc.fillPokemonList(action.result.results)

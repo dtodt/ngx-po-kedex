@@ -7,17 +7,9 @@ export class GetPokemonList {
 
 export class GetPokemonListDone {
   static readonly type = '[National] Get Pokemon List Done';
-  constructor(
-    public details?: any,
-    public result?: PokemonListResult,
-    public reset?: boolean
-  ) {}
+  constructor(public details?: any, public result?: PokemonListResult) {}
 }
 
 export class GetMorePokemon {
   static readonly type = '[National] Get More Pokemon';
-}
-
-export class ResetPokemonList {
-  static readonly type = '[National] Reset Pokemon List';
 }

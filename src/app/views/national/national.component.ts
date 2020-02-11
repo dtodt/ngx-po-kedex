@@ -9,7 +9,7 @@ import {
   NavigatePokemonDetails
 } from '@app/state/app.actions';
 
-import { GetMorePokemon, ResetPokemonList } from './state/national.actions';
+import { GetMorePokemon } from './state/national.actions';
 import { NationalState } from './state/national.state';
 
 @Component({
@@ -28,10 +28,6 @@ export class NationalComponent {
 
   loadMore(): void {
     this.store.dispatch(new GetMorePokemon());
-  }
-
-  reset(): void {
-    this.store.dispatch(new ResetPokemonList());
   }
 
   cardClicked(id?: number): void {
